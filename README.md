@@ -117,4 +117,12 @@ The assignment deliverable consists of a Github repository containing:
 
 
 # Design
-[ Your work goes here ]
+## Network requirements
+- 315 usable adresses for host-A
+- 214 usable adresses for host-B
+- 344 usable adresses for host-C
+- host-C must run a Docker image reachable by host-A and host-B
+- use only static routes as generic as possible
+
+## Network topology
+
