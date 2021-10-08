@@ -125,7 +125,7 @@ The assignment deliverable consists of a Github repository containing:
 - use only static routes as generic as possible
 
 ## Addressing
-there are 4 different subnets:
+There are 4 different subnets:
 1. between router-1 and router-2
 
 require only 2 ip addresses, we use the subnet 10.1.1.0/30
@@ -170,6 +170,21 @@ need to manage 344 ip addresses, we use the subnet 192.168.4.0/23
 
 ![image](https://user-images.githubusercontent.com/91339156/136593267-e4b3f080-89ee-4b0a-b750-2e84aa2c4c7d.png)
 
-## Vagrant configuration
+## Devices configuration
 
+## Vagrant file
+The Vagrant file must be modified in order to run the devices we implemented by specifying the path to the relative shell script.
+In addition the host-c memory must be increased from 256 MB to 512 MB because it has to run a Docker image (dustnic82/nginx-test).
+
+
+        config.vm.define "host-c" do |hostc|
+        hostc.vm.box = "ubuntu/bionic64"
+        hostc.vm.hostname = "host-c"
+        hostc.vm.network "private_network", virtualbox__intnet: "broadcast_router-south-2", auto_config: false
+        hostc.vm.provision "shell", path: "host-c.sh"
+        hostc.vm.provider "virtualbox" do |vb|
+        vb.memory = 512
+        end  
+
+## Test result
 
