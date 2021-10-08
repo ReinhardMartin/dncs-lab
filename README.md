@@ -131,7 +131,7 @@ require only 2 addresses
 | NETWORK INTERFACE | DEVICE | IP ADDRESS | 
 | :---: | :---: | :---:|
 | enp0s9 |  router-1 | 10.1.1.1/30 | 
-| enp0s9 | router-2 | 10.1.1.2/30 |
+| enp0s9 | router-2 | 10.1.1.2/30 
 
 ## Network topology
 
