@@ -127,13 +127,49 @@ The assignment deliverable consists of a Github repository containing:
 ## Addressing
 there are 4 different subnets:
 1. between router-1 and router-2
-require only 2 addresses
+
+require only 2 ip addresses, we use the subnet 10.1.1.0/30
+
 | NETWORK INTERFACE | DEVICE | IP ADDRESS | 
 | :---: | :---: | :---:|
 | enp0s9 |  router-1 | 10.1.1.1/30 | 
 | enp0s9 | router-2 | 10.1.1.2/30 
 
+2. between router-1 and host-a
+
+need to manage 315 ip addresses, we use the subnet 192.168.2.0/23 
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s8.2 |  router-1 | 192.168.2.1/23 | 
+| enp0s8 | host-a | 192.168.2.2/23  
+
+and create a VLAN with tag "2"
+
+3. between router-1 and host-b
+
+need to manage 214 ip addresses, we use the subnet 192.168.1.0/24
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s8.3 |  router-1 | 192.168.1.1/24 | 
+| enp0s8 | host-b | 192.168.1.2/24
+
+and create a VLAN with tag "3"
+
+4. between router-2 and host-c
+
+need to manage 344 ip addresses, we use the subnet 192.168.4.0/23
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s8 |  router-2 | 192.168.4.1/23 | 
+| enp0s8 | host-c | 192.168.4.2/23 
+
 ## Network topology
 
+![image](https://user-images.githubusercontent.com/91339156/136593267-e4b3f080-89ee-4b0a-b750-2e84aa2c4c7d.png)
+
+## Vagrant configuration
 
 
