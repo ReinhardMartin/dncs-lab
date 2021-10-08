@@ -124,7 +124,16 @@ The assignment deliverable consists of a Github repository containing:
 - host-C must run a Docker image reachable by host-A and host-B
 - use only static routes as generic as possible
 
-## Subnets
-1. subnet 10.00
+## Addressing
+there are 4 different subnets:
+1. between router-1 and router-2
+require only 2 addresses
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s9 |  router-1 | 10.1.1.1/30 | 
+| enp0s9 | router-2 | 10.1.1.2/30 |
+
+## Network topology
+
 
 
