@@ -124,5 +124,7 @@ The assignment deliverable consists of a Github repository containing:
 - host-C must run a Docker image reachable by host-A and host-B
 - use only static routes as generic as possible
 
-## Network topology
+## Subnets
+1. subnet 10.00
+
 
