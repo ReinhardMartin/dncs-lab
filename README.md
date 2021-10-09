@@ -126,7 +126,7 @@ The assignment deliverable consists of a Github repository containing:
 
 ## Addressing
 There are 4 different subnets:
-1. between router-1 and router-2
+1. **between router-1 and router-2**
 
 require only 2 ip addresses, we use the subnet 10.1.1.0/30
 
@@ -135,7 +135,7 @@ require only 2 ip addresses, we use the subnet 10.1.1.0/30
 | enp0s9 |  router-1 | 10.1.1.1/30 | 
 | enp0s9 | router-2 | 10.1.1.2/30 
 
-2. between router-1 and host-a
+2. **between router-1 and host-a**
 
 need to manage 315 ip addresses, we use the subnet 192.168.2.0/23 
 
@@ -146,7 +146,7 @@ need to manage 315 ip addresses, we use the subnet 192.168.2.0/23
 
 and create a VLAN with tag "2"
 
-3. between router-1 and host-b
+3. **between router-1 and host-b**
 
 need to manage 214 ip addresses, we use the subnet 192.168.1.0/24
 
@@ -157,7 +157,7 @@ need to manage 214 ip addresses, we use the subnet 192.168.1.0/24
 
 and create a VLAN with tag "3"
 
-4. between router-2 and host-c
+4. **between router-2 and host-c**
 
 need to manage 344 ip addresses, we use the subnet 192.168.4.0/23
 
