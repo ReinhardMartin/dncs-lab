@@ -168,7 +168,7 @@ need to manage 344 ip addresses, we use the subnet 192.168.4.0/23
 
 ## Network topology
 
-![image](https://user-images.githubusercontent.com/91339156/136593267-e4b3f080-89ee-4b0a-b750-2e84aa2c4c7d.png)
+![topology](https://user-images.githubusercontent.com/91339156/136704170-deadde7a-23c0-4b28-a78b-87c6bc63e04b.PNG)
 
 ## Devices configuration
 
