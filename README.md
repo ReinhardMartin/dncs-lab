@@ -331,6 +331,6 @@ function changeCookie() {
 
 ```
 
-And here's the rendering:
+# And here's the rendering:
 
 ![image](https://user-images.githubusercontent.com/91339156/136818437-afb70dbb-0397-4fb6-b16c-1f91ae3e4b63.png)
