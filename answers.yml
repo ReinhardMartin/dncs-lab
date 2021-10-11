@@ -1,0 +1,18 @@
+FirstName: Martin
+LastName: Reinhard
+MatriculationNumber: 201770
+AcademicYear: 2019-2020
+GitHubUrl: https://github.com/ReinhardMartin/dncs-lab.git
+Subnets:
+  HostsA:
+    RequiredAddresses: 315
+    SubnetAddress: 192.168.2.0
+    SubnetPrefixLength: 23
+  HostsB:
+    RequiredAddresses: 214
+    SubnetAddress: 192.168.1.0
+    SubnetPrefixLength: 24
+  Hub:
+    RequiredAddresses: 344
+    SubnetAddress: 192.168.4.0
+    SubnetPrefixLength: 23
