@@ -117,4 +117,74 @@ The assignment deliverable consists of a Github repository containing:
 
 
 # Design
-[ Your work goes here ]
+## Network requirements
+- 315 usable adresses for host-A
+- 214 usable adresses for host-B
+- 344 usable adresses for host-C
+- host-C must run a Docker image reachable by host-A and host-B
+- use only static routes as generic as possible
+
+## Addressing
+There are 4 different subnets:
+1. **between router-1 and router-2**
+
+require only 2 ip addresses, we use the subnet 10.1.1.0/30
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s9 |  router-1 | 10.1.1.1/30 | 
+| enp0s9 | router-2 | 10.1.1.2/30 
+
+2. **between router-1 and host-a**
+
+need to manage 315 ip addresses, we use the subnet 192.168.2.0/23 
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s8.2 |  router-1 | 192.168.2.1/23 | 
+| enp0s8 | host-a | 192.168.2.2/23  
+
+and create a VLAN with tag "2"
+
+3. **between router-1 and host-b**
+
+need to manage 214 ip addresses, we use the subnet 192.168.1.0/24
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s8.3 |  router-1 | 192.168.1.1/24 | 
+| enp0s8 | host-b | 192.168.1.2/24
+
+and create a VLAN with tag "3"
+
+4. **between router-2 and host-c**
+
+need to manage 344 ip addresses, we use the subnet 192.168.4.0/23
+
+| NETWORK INTERFACE | DEVICE | IP ADDRESS | 
+| :---: | :---: | :---:|
+| enp0s8 |  router-2 | 192.168.4.1/23 | 
+| enp0s8 | host-c | 192.168.4.2/23 
+
+## Network topology
+
+![topology](https://user-images.githubusercontent.com/91339156/136704170-deadde7a-23c0-4b28-a78b-87c6bc63e04b.PNG)
+
+## Devices configuration
+
+## Vagrant file
+The Vagrant file must be modified in order to run the devices we implemented by specifying the path to the relative shell script.
+In addition the host-c memory must be increased from 256 MB to 512 MB because it has to run a Docker image (dustnic82/nginx-test).
+
+
+        config.vm.define "host-c" do |hostc|
+        hostc.vm.box = "ubuntu/bionic64"
+        hostc.vm.hostname = "host-c"
+        hostc.vm.network "private_network", virtualbox__intnet: "broadcast_router-south-2", auto_config: false
+        hostc.vm.provision "shell", path: "host-c.sh"
+        hostc.vm.provider "virtualbox" do |vb|
+        vb.memory = 512
+        end  
+
+## Test result
+
